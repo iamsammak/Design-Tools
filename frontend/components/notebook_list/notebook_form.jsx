@@ -2,7 +2,7 @@ import React from 'react';
 // grab the unique Id generator aka getTime from current Date
 import { uniqueId } from '../../utils/idGenerator';
 
-class NoteForm extends React.Component {
+class NotebookForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,8 +22,8 @@ class NoteForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    const note = Object.assign({}, this.state, { id: uniqueId() });
-    this.props.receiveNote(note);
+    const notebook = Object.assign({}, this.state, { id: uniqueId() });
+    this.props.receiveNote(notebook);
     this.setState({
       title: "",
       body: ""
@@ -32,13 +32,13 @@ class NoteForm extends React.Component {
 
   render() {
     return (
-      <form className="note-form" onSubmit={this.handleSubmit}>
+      <form className="notebook-form" onSubmit={this.handleSubmit}>
         <label>Title:
           <input
             className="input"
             ref="title"
             value={this.state.title}
-            placeholder="grey out placeholder"
+            placeholder="new notebook title"
             onChange={this.update('title')}
             required />
         </label>
@@ -49,14 +49,14 @@ class NoteForm extends React.Component {
             cols='20'
             value={this.state.body}
             rows='5'
-            placeholder="body placeholder greyed out"
+            placeholder="Insert Notebook detail"
             onChange={this.update('body')}
             required></textarea>
         </label>
-        <button className="create-button">Create Note!</button>
+        <button className="create-button">Create Notebook!</button>
       </form>
     );
   }
 };
 
-export default NoteForm;
+export default NotebookForm;

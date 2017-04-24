@@ -10,8 +10,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  receiveNotebook = (notebook) => dispatch(receiveNotebook(notebook)),
-  receiveNotebooks = () => dispatch(receiveNotebooks())
+  receiveNotebook: (notebook) => dispatch(receiveNotebook(notebook)),
+  receiveNotebooks: () => dispatch(receiveNotebooks())
 });
 
 export default connect(

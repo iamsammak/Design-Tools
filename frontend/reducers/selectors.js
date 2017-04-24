@@ -4,7 +4,7 @@ export const allNotes = ({ notes }) => (
 );
 
 export const allNotebooks = ({ notebooks }) => (
-  Object.keys(notebooks).map(id => notesbooks[id])
+  Object.keys(notebooks).map(id => notebooks[id])
 );
 
 // filter via done/undone <-- truefalse boolean

@@ -1,6 +1,6 @@
 import React from 'react';
 
-// components
+// if I decide to add steps to each note
 // import StepListContainer from '../step_list/step_list_container';
 // add StepListContainer under p tag
 

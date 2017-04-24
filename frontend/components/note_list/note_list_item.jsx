@@ -25,7 +25,7 @@ class NoteListItem extends React.Component {
       { done: !this.props.note.done }
     );
 
-    this.props.receiveNote(toggledNote)
+    this.props.receiveNote(toggledNote);
   }
 
   render() {

@@ -1,7 +1,7 @@
 import { RECEIVE_NOTES,
          RECEIVE_NOTE,
          REMOVE_NOTE,
-         TODO_ERROR } from '../actions/note_actions';
+         NOTE_ERROR } from '../actions/note_actions';
 
 import merge from 'lodash/merge';
 
@@ -22,7 +22,7 @@ const NotesReducer = (state = initialTestState, action) => {
       // use delete operator to remove note from state-Object
       delete nextState[action.note.id];
       return nextState;
-    case TODO_ERROR:
+    case NOTE_ERROR:
       alert(action.error);
     default:
       return state;
