@@ -37,14 +37,14 @@ const initialTestState = {
     title: "Notebook Title",
     body: "Will delete the body on final revision",
     notes: [
-      1: {
+      {
         id: 1,
         title: "Note Title",
         body: "Note detail",
         notebook_id: 1,
         done: false
       },
-      2: {
+      {
         id: 2,
         title: "Note #2",
         body: "Detail for note #2",
@@ -58,21 +58,21 @@ const initialTestState = {
     title: "Games",
     body: "Will delete the body on final revision",
     notes: [
-      1: {
+      {
         id: 1,
         title: "Apple",
         body: "Assigned to Jonathan",
         notebook_id: 2,
         done: false
       },
-      2: {
+      {
         id: 2,
         title: "Sushi",
         body: "Assigned to Joy",
         notebook_id: 2,
         done: false
       },
-      3: {
+      {
         id: 3,
         title: "Note Sushi",
         body: "Assigned to Joy",

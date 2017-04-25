@@ -1,5 +1,6 @@
 // main note component
 import React from 'react';
+import mapValues from 'lodash/mapValues'
 
 // components
 import NoteListItem from './note_list_item';
@@ -12,7 +13,8 @@ class NoteList extends React.Component {
     const { notes, receiveNote } = this.props;
     // should dig through the notebook and map out each note within the current notebook
     debugger
-    const noteItems = notes.map(notebook => (
+    const noteArr = Object.values(notes);
+    const noteItems = noteArr.map(note => (
       <NoteListItem
         key={`note-list-item${note.id}`}
         note={note}
