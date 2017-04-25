@@ -8,22 +8,11 @@ class NotebookListItem extends React.Component {
     super(props);
     this.state = {detail: false};
     this.toggleDetail = this.toggleDetail.bind(this);
-    this.toggleNotebook = this.toggleNotebook.bind(this);
   }
 
   toggleDetail(e) {
     e.preventDefault();
     this.setState({detail: !this.state.detail});
-  }
-
-  toggleNotebook(e) {
-    e.preventDefault();
-    const toggledNotebook = merge(
-      {},
-      this.props.notebook
-    );
-
-    this.props.receiveNotebook(toggleNotebook);
   }
 
   render() {

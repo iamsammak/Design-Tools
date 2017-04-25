@@ -8,7 +8,7 @@ class NotebookForm extends React.Component {
     this.state = {
       title: "",
       body: "",
-      done: false
+      notes: {}
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,10 +23,11 @@ class NotebookForm extends React.Component {
     e.preventDefault();
 
     const notebook = Object.assign({}, this.state, { id: uniqueId() });
-    this.props.receiveNote(notebook);
+    this.props.receiveNotebook(notebook);
     this.setState({
       title: "",
-      body: ""
+      body: "",
+      notes: {}
     }); // this is to reset form
   }
 

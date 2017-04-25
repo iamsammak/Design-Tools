@@ -6,6 +6,16 @@ import NotebookListItem from './notebook_list_item';
 import NotebookForm from './notebook_form';
 
 class NotebookList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { newNotebookDetail: false };
+    this.toggleNotebookForm = this.toggleNotebookForm.bind(this);
+  }
+
+  toggleNotebookForm(e) {
+    e.preventDefault();
+    this.setState({newNotebookDetail: !this.state.newNotebookDetail});
+  }
 
   render() {
     const { notebooks, receiveNotebook } = this.props;
@@ -17,12 +27,18 @@ class NotebookList extends React.Component {
       )
     );
 
+    let notebookForm;
+    if (this.state.newNotebookDetail) {
+      notebookForm = <NotebookForm receiveNotebook={ receiveNotebook }/>;
+    }
+
     return(
       <div>
         <ul className="notebook-list">
           { notebookItems }
         </ul>
-        <NotebookForm receiveNotebook={ receiveNotebook }/>
+        <h3><div onClick={ this.toggleNotebookForm }>Add a Notebook</div></h3>
+        { notebookForm }
       </div>
     )
   }
