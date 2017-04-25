@@ -22,7 +22,10 @@ class NotebookListItem extends React.Component {
     if (this.state.detail) {
       detail = <NotebookDetailViewContainer notebook={ notebook } />;
     }
-    let numOfNotes = Object.keys(this.props.notebook.notes).length;
+    debugger
+    // old
+    // let numOfNotes = Object.keys(this.props.notebook.notes).length;
+    let numOfNotes = notebook.notes.length;
 
     return (
       <li className="notebook-list-item">

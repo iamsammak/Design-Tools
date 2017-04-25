@@ -1,7 +1,7 @@
 import React from 'react';
 
 // will need to chain the user, note_boards (might call them note pads)
-import NoteListContainer from './note_list/note_list_container';
+// import NoteListContainer from './note_list/note_list_container';
 import NotebookListContainer from './notebook_list/notebook_list_container';
 
 // select tag is part of testing
@@ -17,7 +17,6 @@ const App = () => (
     </select>
     <br></br>
     <NotebookListContainer />
-    <NoteListContainer />
   </div>
 );
 

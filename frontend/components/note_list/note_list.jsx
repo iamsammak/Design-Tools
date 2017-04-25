@@ -10,7 +10,9 @@ class NoteList extends React.Component {
   // may need to add a constructor later
   render() {
     const { notes, receiveNote } = this.props;
-    const noteItems = notes.map(note => (
+    // should dig through the notebook and map out each note within the current notebook
+    debugger
+    const noteItems = notes.map(notebook => (
       <NoteListItem
         key={`note-list-item${note.id}`}
         note={note}

@@ -2,10 +2,16 @@
 export const allNotes = ({ notes }) => (
   Object.keys(notes).map(id => notes[id])
 );
+// replaces allNotes
+export const notesByNotebookId = ({ notes }, notebook_id) => (
+  notes[notebook_id] ? Object.keys(notes[notebook_id]).map(key => notes[notebook_id][key]) : {}
+)
 
 export const allNotebooks = ({ notebooks }) => (
   Object.keys(notebooks).map(id => notebooks[id])
 );
+
+// export const findCurrentNotes = ({ })
 
 // filter via done/undone <-- truefalse boolean
 export const getFilteredNotes = ({notes, filter}) => {

@@ -36,49 +36,49 @@ const initialTestState = {
     id: 1,
     title: "Notebook Title",
     body: "Will delete the body on final revision",
-    notes: {
+    notes: [
       1: {
         id: 1,
         title: "Note Title",
         body: "Note detail",
-        assigned: "",
+        notebook_id: 1,
         done: false
       },
       2: {
         id: 2,
         title: "Note #2",
         body: "Detail for note #2",
-        assigned: "",
+        notebook_id: 1,
         done: false
       }
-    }
+    ]
   },
   2: {
     id: 2,
     title: "Games",
     body: "Will delete the body on final revision",
-    notes: {
+    notes: [
       1: {
         id: 1,
         title: "Apple",
         body: "Assigned to Jonathan",
-        assigned: "",
+        notebook_id: 2,
         done: false
       },
       2: {
         id: 2,
         title: "Sushi",
         body: "Assigned to Joy",
-        assigned: "",
+        notebook_id: 2,
         done: false
       },
       3: {
         id: 3,
         title: "Note Sushi",
         body: "Assigned to Joy",
-        assigned: "",
+        notebook_id: 2,
         done: false
       }
-    }
+    ]
   }
 };

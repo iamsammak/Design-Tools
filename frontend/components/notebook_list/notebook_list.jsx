@@ -27,6 +27,7 @@ class NotebookList extends React.Component {
       )
     );
 
+    // change click toggle to modal later
     let notebookForm;
     if (this.state.newNotebookDetail) {
       notebookForm = <NotebookForm receiveNotebook={ receiveNotebook }/>;
