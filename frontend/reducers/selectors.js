@@ -2,7 +2,7 @@
 export const allNotes = ({ notes }) => (
   Object.keys(notes).map(id => notes[id])
 );
-// replaces allNotes
+// replaces allNotes but didn't use, instead change state
 export const notesByNotebookId = ({ notes }, notebook_id) => (
   notes[notebook_id] ? Object.keys(notes[notebook_id]).map(key => notes[notebook_id][key]) : {}
 )

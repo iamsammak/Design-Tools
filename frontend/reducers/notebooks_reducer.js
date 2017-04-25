@@ -56,7 +56,7 @@ const initialTestState = {
   2: {
     id: 2,
     title: "Games",
-    body: "Will delete the body on final revision",
+    body: "Body for Games",
     notes: [
       {
         id: 1,

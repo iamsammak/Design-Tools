@@ -1,6 +1,6 @@
 // main note component
 import React from 'react';
-import mapValues from 'lodash/mapValues'
+// import mapValues from 'lodash/mapValues'
 
 // components
 import NoteListItem from './note_list_item';

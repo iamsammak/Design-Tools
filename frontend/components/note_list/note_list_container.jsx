@@ -3,12 +3,13 @@ import NoteList from './note_list';
 
 // actions
 import { createNote, receiveNotes, receiveNote } from '../../actions/note_actions';
-import { notesByNotebookId } from '../../reducers/selectors';
 
-const mapStateToProps = ({notebook_id, notes}) => ({
-  notebook_id: notebook_id,
-  notes: notes
-});
+// why does adding a mapStateToProps cause props to render weird
+// const mapStateToProps = ({notebookId, notes}) => ({
+//   notebook_id: notebookId,
+//   notes: notes
+// });
+
 const mapDispatchToProps = dispatch => ({
   createNote: note => dispatch(createNote(note)),
   receiveNote: (note) => dispatch(receiveNote(note)),
@@ -16,7 +17,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(NoteList);
 

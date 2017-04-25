@@ -3,7 +3,7 @@ import NotebookDetailView from './notebook_detail_view';
 
 // actions
 import { removeNotebook } from '../../actions/notebook_actions';
-import { requestNotes } from '../../actions/notebook_actions';
+import { requestNotes } from '../../actions/note_actions';
 
 const mapStateToProps = ({notebooks}) => (
   notebooks: notebooks

@@ -5,7 +5,7 @@ import { RECEIVE_NOTES,
 
 import merge from 'lodash/merge';
 
-const NotesReducer = (state = initialTestState, action) => {
+const NotesReducer = (state = {}, action) => {
   Object.freeze(state);
   let nextState;
 
@@ -31,18 +31,19 @@ const NotesReducer = (state = initialTestState, action) => {
 
 export default NotesReducer;
 
+// this is pre-Notebook component
 const initialTestState = {
   1: {
     id: 1,
-    title: "Apple",
-    body: "Assigned to Jonathan",
+    title: "Green Tea Mochi",
+    body: "Favorite snack",
     assigned: "",
     done: false
   },
   2: {
     id: 2,
-    title: "Sushi",
-    body: "Assigned to Joy",
+    title: "Mister Donut",
+    body: "Best Donut EVER",
     assigned: "",
     done: false
   }
