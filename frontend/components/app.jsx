@@ -7,16 +7,17 @@ import NotebookListContainer from './notebook_list/notebook_list_container';
 const App = () => (
   <div className="notepad">
     <h1>Notepad Tool</h1>
-    <p>Testing Select Tag</p>
-    <select>
-      <option value="apple">Apple</option>
-      <option value="orange">Orange</option>
-      <option selected value="coconut">Coconut</option>
-      <option value="pineapple">Pineapple</option>
-    </select>
-    <br></br>
     <NotebookListContainer />
   </div>
 );
 
 export default App;
+
+
+// <p>Testing Select Tag</p>
+// <select>
+//   <option value="apple">Apple</option>
+//   <option value="orange">Orange</option>
+//   <option selected value="coconut">Coconut</option>
+//   <option value="pineapple">Pineapple</option>
+// </select>

@@ -7,16 +7,19 @@ import merge from 'lodash/merge';
 
 const NotesReducer = (state = {}, action) => {
   Object.freeze(state);
-  let nextState;
+  let nextState = {};
 
   switch(action.type) {
     case RECEIVE_NOTES:
-      nextState = {};
       action.notes.forEach(note => nextState[note.id] = note);
       return nextState;
     case RECEIVE_NOTE:
       const newNote = {[action.note.id]: action.note};
-      return merge({}, state, newNote);
+  console.log(`inside notes reducer ${action.type}, ${action.note}`);
+  console.log(newNote);
+  debugger
+      nextState = merge({}, state, newNote);
+      return nextState;
     case REMOVE_NOTE:
       nextState = merge({}, state);
       // use delete operator to remove note from state-Object

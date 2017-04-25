@@ -7,16 +7,16 @@ import merge from 'lodash/merge';
 
 const NotebooksReducer = (state = initialTestState, action) => {
   Object.freeze(state);
-  let nextState;
+  let nextState = {};
 
   switch(action.type) {
     case RECEIVE_NOTEBOOKS:
-      nextState = {};
       action.notebooks.forEach(notebook => nextState[notebook.id] = notebook);
       return nextState;
     case RECEIVE_NOTEBOOK:
       const newNotebook = {[action.notebook.id]: action.notebook};
-      return merge({}, state, newNotebook);
+      nextState = merge({}, state, newNotebook);
+      return nextState;
     case REMOVE_NOTEBOOK:
       nextState = merge({}, state);
       delete nextState[action.notebook.id];

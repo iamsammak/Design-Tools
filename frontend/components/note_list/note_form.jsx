@@ -8,6 +8,7 @@ class NoteForm extends React.Component {
     this.state = {
       title: "",
       body: "",
+      notebook_id: this.props.notebookId,
       done: false
     };
 
@@ -21,12 +22,18 @@ class NoteForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
+debugger
+console.log("handle submit");
     const note = Object.assign({}, this.state, { id: uniqueId() });
+
     this.props.receiveNote(note);
+    // this should be createNote once we can persist state aka backend
+    this.props.createNote(note);
+debugger
     this.setState({
       title: "",
-      body: ""
+      body: "",
+      notebook_id: "",
     }); // this is to reset form
   }
 

@@ -11,8 +11,6 @@ class NoteList extends React.Component {
   // may need to add a constructor later
   render() {
     const { notes, receiveNote } = this.props;
-    // should dig through the notebook and map out each note within the current notebook
-    debugger
     const noteArr = Object.values(notes);
     const noteItems = noteArr.map(note => (
       <NoteListItem
@@ -27,7 +25,9 @@ class NoteList extends React.Component {
         <ul className="note-list">
           { noteItems }
         </ul>
-        <NoteForm receiveNote={ receiveNote }/>
+        <NoteForm
+          notebookId={ this.props.notebookId }
+          receiveNote={ receiveNote }/>
       </div>
     );
 
