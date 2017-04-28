@@ -20,6 +20,15 @@ class User < ApplicationRecord
   has_many :notebooks
   has_many :notes, through: :notebooks, source: :notes
 
+  def password=(password)
+    @password = password
+    self.password_digest = BCrypt::Password.create(password)
+  end
+
+  def is_password?(password)
+    BCrypt::Password.new(self.password_digest).is_password?(password)
+  end
+
   def self.find_by_credentials(user_params)
     user = User.find_by(username: user_params[:username])
     user && user.is_password?(user_params[:password]) ? user : nil
@@ -29,21 +38,8 @@ class User < ApplicationRecord
     self.session_token = SecureRandom::urlsafe_base64
   end
 
-  def is_password?(password)
-    password_digest.is_password?(password)
-  end
-
-  def password=(password)
-    @password = password
-    self.password_digest = BCrypt::Password.create(password)
-  end
-
   def reset_session_token!
     update!(session_token: SecureRandom::urlsafe_base64)
     session_token
-  end
-
-  def password_digest
-    BCrypt::Password.new(super)
   end
 end

@@ -13,7 +13,7 @@ import Root from './components/root';
 document.addEventListener('DOMContentLoaded', () => {
   let store = configureStore();
 
-  const root = document.getElementById('root');
+  const root = document.getElementById('content');
   ReactDOM.render(
     <Root store={ store }/>, root
   );
