@@ -30,5 +30,5 @@ export const notebookError = error => ({
 
 // async actions
 export const fetchNotebooks = () => dispatch => (
-  NotebookAPIUtil.fetchNotebooks().then(notebooks => dispatch(receiveNotebooks()))
+  NotebookAPIUtil.fetchNotebooks().then(notebooks => dispatch(receiveNotebooks(notebooks)))
 );

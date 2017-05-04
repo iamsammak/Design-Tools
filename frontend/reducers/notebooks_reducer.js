@@ -11,6 +11,7 @@ const NotebooksReducer = (state = {}, action) => {
 
   switch(action.type) {
     case RECEIVE_NOTEBOOKS:
+    debugger
       action.notebooks.forEach(notebook => nextState[notebook.id] = notebook);
       return nextState;
     case RECEIVE_NOTEBOOK:
