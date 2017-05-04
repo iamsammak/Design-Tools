@@ -12,6 +12,11 @@ class NotebookList extends React.Component {
     this.toggleNotebookForm = this.toggleNotebookForm.bind(this);
   }
 
+  componentDidMount() {
+    debugger
+    this.props.fetchNotebooks();
+  }
+
   toggleNotebookForm(e) {
     e.preventDefault();
     this.setState({newNotebookDetail: !this.state.newNotebookDetail});
