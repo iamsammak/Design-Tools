@@ -28,7 +28,7 @@ console.log("handle submit");
 
     this.props.receiveNote(note);
     // this should be createNote once we can persist state aka backend
-    this.props.createNote(note);
+    // this.props.createNote(note);
 debugger
     this.setState({
       title: "",

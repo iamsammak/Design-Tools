@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
 
 import RootReducer from '../reducers/root_reducer';
-// import RootMiddleware from '../middleware/root_middleware';
+import RootMiddleware from '../middlewares/root_middleware';
 
 // const configureStore = (preloadedState = {}) => {
 //   const store = createStore(
@@ -17,7 +17,8 @@ import RootReducer from '../reducers/root_reducer';
 const configureStore = (preloadedState = {}) => (
   createStore(
     RootReducer,
-    preloadedState
+    preloadedState,
+    RootMiddleware
   )
 );
 // only () follow the big arrow because createStore will create an Object {}

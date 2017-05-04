@@ -6,7 +6,8 @@ import { receiveNotebooks, receiveNotebook } from '../../actions/notebook_action
 import { allNotebooks } from '../../reducers/selectors';
 
 const mapStateToProps = state => ({
-  notebooks: allNotebooks(state)
+  notebooks: allNotebooks(state),
+  state
 });
 
 const mapDispatchToProps = dispatch => ({

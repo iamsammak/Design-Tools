@@ -5,7 +5,7 @@ import { RECEIVE_NOTEBOOKS,
 
 import merge from 'lodash/merge';
 
-const NotebooksReducer = (state = initialTestState, action) => {
+const NotebooksReducer = (state = {}, action) => {
   Object.freeze(state);
   let nextState = {};
 
@@ -16,6 +16,7 @@ const NotebooksReducer = (state = initialTestState, action) => {
     case RECEIVE_NOTEBOOK:
       const newNotebook = {[action.notebook.id]: action.notebook};
       nextState = merge({}, state, newNotebook);
+      debugger
       return nextState;
     case REMOVE_NOTEBOOK:
       nextState = merge({}, state);

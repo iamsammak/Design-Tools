@@ -1,3 +1,8 @@
+npm install
+webpack --watch
+rails s
+
+
 Addressing the Sass webpack issue
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
