@@ -2,6 +2,8 @@ class Api::NotebooksController < ApplicationController
   def index
     @notebooks = Notebook.where(user_id: params[:user_id])
     render :index
+    # to test without backend views
+    # render json: Notebook.all.where(user_id: 1)
   end
 
   def show
