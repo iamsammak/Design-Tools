@@ -43,7 +43,7 @@ debugger
     if (this.state.detail) {
       detail = <NoteDetailViewContainer note={ note } />;
     }
-debugger
+
     return (
       <li className="note-list-item">
         <div className="note-header">
