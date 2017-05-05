@@ -7,7 +7,7 @@ import configureStore from './store/store';
 // for testing
 // import allNotes from './reducers/selectors';
 import { receiveNote, receiveNotes, requestNotes } from './actions/note_actions';
-import { fetchNotebooks } from './actions/notebook_actions';
+import { fetchNotebooks, createNotebook } from './actions/notebook_actions';
 import Root from './components/root';
 // end of testing
 
@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.receiveNotes = receiveNotes;
   window.requestNotes = requestNotes;
   window.fetchNotebooks = fetchNotebooks;
+  window.createNotebook = createNotebook;
   // end of testing
 });
 

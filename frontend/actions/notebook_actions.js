@@ -1,5 +1,6 @@
 import * as NotebookAPIUtil from '../utils/notebook_api_util';
 // error actions
+import { receiveErrors, clearErrors } from './error_actions';
 
 export const RECEIVE_NOTEBOOKS = "RECEIVE_NOTEBOOKS";
 export const RECEIVE_NOTEBOOK = "RECEIVE_NOTEBOOK";
@@ -37,20 +38,22 @@ export const fetchNotebook = id => dispatch => (
   NotebookAPIUtil.fetchNotebook(id).then(notebook => dispatch(receiveNotebook(notebook)))
 );
 
-export const createNotebook = (notebook) => dispatch => (
+export const createNotebook = (notebook) => dispatch => {
+  console.log(notebook);
+  return (
   NotebookAPIUtil.createNotebook(notebook)
   .then(notebook => {
     dispatch(receiveNotebook(notebook));
     dispatch(clearErrors())
   },
   err => dispatch(receiveErrors(err.responseJSON)))
-);
+)};
 
-
-// export function createTodo(todo) {
-//   return (dispatch) => {
-//     return APIUtil.createTodo(todo)
-//       .then(todo => dispatch(receiveTodo(todo)),
-//             err => dispatch(receiveErrors(err.responseJSON)));
-//   };
-// }
+// export const createNotebook = notebook => dispatch => (
+//   NotebookAPIUtil.createNotebook(notebook)
+//   .then(notebook => {
+//     dispatch(receiveNotebook(notebook));
+//     dispatch(clearErrors())
+//   },
+//   err => dispatch(receiveErrors(err.responseJSON)))
+// );

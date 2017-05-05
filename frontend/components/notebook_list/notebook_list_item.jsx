@@ -23,6 +23,10 @@ class NotebookListItem extends React.Component {
       detail = <NotebookDetailViewContainer notebook={ notebook } />;
     }
 debugger
+    // temp fix to resolve the missing notes param
+    if (typeof this.props.notebook.notes === "undefined") {
+      this.props.notebook.notes = {};
+    }
     const numOfNotes = Object.keys(this.props.notebook.notes).length;
 
     return (

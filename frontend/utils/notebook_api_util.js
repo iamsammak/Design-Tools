@@ -17,13 +17,11 @@ export const fetchNotebook = (id, success, error) => (
   })
 );
 
-export const createNotebook = (notebook, success, error) => (
+export const createNotebook = (notebook) => (
  $.ajax({
     method: 'POST',
     url: '/api/notebooks',
-    data: notebook,
-    success,
-		error
+    data: notebook
   })
 );
 
