@@ -8,7 +8,7 @@ class NotebookForm extends React.Component {
     this.state = {
       title: "",
       body: "",
-      notes: {}
+      notes: []
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,13 +22,15 @@ class NotebookForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
+    // does it have to be a uniqueId...maybe after I add a createNotebook()
     const notebook = Object.assign({}, this.state, { id: uniqueId() });
-    this.props.receiveNotebook(notebook);
-    this.setState({
-      title: "",
-      body: "",
-      notes: {}
-    }); // this is to reset form
+    this.props.createNotebook(notebook).then(
+      () => this.setState({
+        title: "",
+        body: "",
+        notes: []
+      }) // this is to reset form
+    );
   }
 
   render() {

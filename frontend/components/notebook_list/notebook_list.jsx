@@ -23,7 +23,7 @@ class NotebookList extends React.Component {
   }
 
   render() {
-    const { notebooks, receiveNotebook } = this.props;
+    const { notebooks, receiveNotebook, createNotebook } = this.props;
     const notebookItems = notebooks.map(notebook => (
       <NotebookListItem
         key={`notebook-list-item${notebook.id}`}
@@ -35,7 +35,7 @@ class NotebookList extends React.Component {
     // change click toggle to modal later
     let notebookForm;
     if (this.state.newNotebookDetail) {
-      notebookForm = <NotebookForm receiveNotebook={ receiveNotebook }/>;
+      notebookForm = <NotebookForm createNotebook={ createNotebook }/>;
     }
 
     return(

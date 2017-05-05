@@ -28,7 +28,15 @@ export const notebookError = error => ({
 });
 
 
-// async actions
+// async actions (thunk action creators)
 export const fetchNotebooks = () => dispatch => (
   NotebookAPIUtil.fetchNotebooks().then(notebooks => dispatch(receiveNotebooks(notebooks)))
+);
+
+export const fetchNotebook = id => dispatch => (
+  NotebookAPIUtil.fetchNotebook(id).then(notebook => dispatch(receiveNotebook(notebook)))
+);
+
+export const createNotebook = (notebook) => dispatch => (
+  NotebookAPIUtil.createNotebook().then(notebook => dispatch(receiveNotebook(notebook)))
 );

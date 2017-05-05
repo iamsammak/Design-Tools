@@ -11,6 +11,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+  createNotebook: (notebook) => dispatch(createNotebook(notebook)),
   receiveNotebook: (notebook) => dispatch(receiveNotebook(notebook)),
   receiveNotebooks: () => dispatch(receiveNotebooks()),
   fetchNotebooks: () => dispatch(fetchNotebooks())
