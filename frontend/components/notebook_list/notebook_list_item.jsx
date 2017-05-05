@@ -23,9 +23,7 @@ class NotebookListItem extends React.Component {
       detail = <NotebookDetailViewContainer notebook={ notebook } />;
     }
 debugger
-    // old when notes was stored as an Object instead of an Array
-    let numOfNotes = Object.keys(this.props.notebook.notes).length;
-    // let numOfNotes = notebook.notes.length;
+    const numOfNotes = Object.keys(this.props.notebook.notes).length;
 
     return (
       <li className="notebook-list-item">
@@ -39,3 +37,7 @@ debugger
 }
 
 export default NotebookListItem;
+
+// old when notes was stored as an Object instead of an Array
+// let numOfNotes = Object.keys(this.props.notebook.notes).length;
+// numOfNotes = notebook.notes.length;
