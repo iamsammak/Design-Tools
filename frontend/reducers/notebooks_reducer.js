@@ -11,13 +11,13 @@ const NotebooksReducer = (state = {}, action) => {
 
   switch(action.type) {
     case RECEIVE_NOTEBOOKS:
-    debugger
+debugger
       action.notebooks.forEach(notebook => nextState[notebook.id] = notebook);
       return nextState;
     case RECEIVE_NOTEBOOK:
       const newNotebook = {[action.notebook.id]: action.notebook};
       nextState = merge({}, state, newNotebook);
-      debugger
+debugger
       return nextState;
     case REMOVE_NOTEBOOK:
       nextState = merge({}, state);

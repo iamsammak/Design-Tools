@@ -26,6 +26,7 @@ class NotebookForm extends React.Component {
     // does it have to be a uniqueId...maybe after I add a createNotebook()
     // const notebook = Object.assign({}, this.state, { id: uniqueId() });
     const notebook = Object.assign({}, this.state);
+    debugger // notes:{} is here but disappears after http requests
     this.props.createNotebook({notebook}).then(
       () => this.setState({
         title: "",
