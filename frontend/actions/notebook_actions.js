@@ -38,5 +38,14 @@ export const fetchNotebook = id => dispatch => (
 );
 
 export const createNotebook = (notebook) => dispatch => (
-  NotebookAPIUtil.createNotebook().then(notebook => dispatch(receiveNotebook(notebook)))
+  NotebookAPIUtil.createNotebook(notebook).then(notebook => dispatch(receiveNotebook(notebook)))
 );
+
+
+// export function createTodo(todo) {
+//   return (dispatch) => {
+//     return APIUtil.createTodo(todo)
+//       .then(todo => dispatch(receiveTodo(todo)),
+//             err => dispatch(receiveErrors(err.responseJSON)));
+//   };
+// }
