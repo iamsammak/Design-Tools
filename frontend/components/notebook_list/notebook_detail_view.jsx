@@ -7,6 +7,7 @@ class NotebookDetailView extends React.Component {
   componentDidMount() {
     this.props.requestNotes(this.props.notebook.id);
   }
+  // remove notebook works
   render() {
     const { notebook, removeNotebook } = this.props;
     return(
