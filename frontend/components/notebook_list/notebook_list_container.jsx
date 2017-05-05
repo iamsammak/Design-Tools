@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import NotebookList from './notebook_list';
 
 // actions
-import { receiveNotebooks, receiveNotebook, fetchNotebooks } from '../../actions/notebook_actions';
+import { receiveNotebooks, receiveNotebook, fetchNotebooks, createNotebook } from '../../actions/notebook_actions';
 import { allNotebooks } from '../../reducers/selectors';
 
 const mapStateToProps = state => ({

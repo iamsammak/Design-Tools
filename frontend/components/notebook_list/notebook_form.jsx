@@ -7,8 +7,9 @@ class NotebookForm extends React.Component {
     super(props);
     this.state = {
       title: "",
-      body: "",
-      notes: []
+      description: "",
+      notes: {},
+      user_id: 1 //change this to current_user.id LATER
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,12 +24,14 @@ class NotebookForm extends React.Component {
     e.preventDefault();
 
     // does it have to be a uniqueId...maybe after I add a createNotebook()
-    const notebook = Object.assign({}, this.state, { id: uniqueId() });
-    this.props.createNotebook(notebook).then(
+    // const notebook = Object.assign({}, this.state, { id: uniqueId() });
+    const notebook = Object.assign({}, this.state);
+    this.props.createNotebook({notebook}).then(
       () => this.setState({
         title: "",
-        body: "",
-        notes: []
+        description: "",
+        notes: {},
+        user_id: 1 // TODO change this to current_user.id LATER
       }) // this is to reset form
     );
   }
@@ -45,15 +48,15 @@ class NotebookForm extends React.Component {
             onChange={this.update('title')}
             required />
         </label>
-        <label>Body:
+        <label>Description:
           <textarea
             className="input"
             ref="body"
             cols='20'
-            value={this.state.body}
+            value={this.state.description}
             rows='5'
             placeholder="Insert Notebook detail"
-            onChange={this.update('body')}
+            onChange={this.update('description')}
             required></textarea>
         </label>
         <button className="create-button">Create Notebook!</button>
