@@ -41,19 +41,16 @@ export const fetchNotebook = id => dispatch => (
 export const createNotebook = (notebook) => dispatch => {
   console.log(notebook);
   return (
-  NotebookAPIUtil.createNotebook(notebook)
-  .then(notebook => {
-    dispatch(receiveNotebook(notebook));
-    dispatch(clearErrors())
-  },
-  err => dispatch(receiveErrors(err.responseJSON)))
-)};
+    NotebookAPIUtil.createNotebook(notebook)
+    .then(notebook => { dispatch(receiveNotebook(notebook)); dispatch(clearErrors())},
+          err => dispatch(receiveErrors(err.responseJSON)))
+  )
+};
 
-// export const createNotebook = notebook => dispatch => (
-//   NotebookAPIUtil.createNotebook(notebook)
-//   .then(notebook => {
-//     dispatch(receiveNotebook(notebook));
-//     dispatch(clearErrors())
-//   },
-//   err => dispatch(receiveErrors(err.responseJSON)))
-// );
+export const updateNotebook = notebook => dispatch => (
+  NotebookAPIUtil.updateNotebook(notebook).then(notebook => dispatch(receiveNotebook(notebook)))
+);
+
+export const deleteNotebook = notebook => dispatch => (
+  NotebookAPIUtil.deleteNotebook(notebook).then(notebook => dispatch(removeNotebook(notebook)))
+);
