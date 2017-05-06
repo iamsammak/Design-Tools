@@ -5,7 +5,6 @@ import NoteListContainer from '../note_list/note_list_container';
 
 class NotebookDetailView extends React.Component {
   componentDidMount() {
-    debugger
     this.props.requestNotes(this.props.notebook.id);
   }
   render() {
